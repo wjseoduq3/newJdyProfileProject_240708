@@ -21,10 +21,14 @@
 		select count(*) from pmembers where mid=#{param1} and mpw=#{param2}
 	</select>
 	
-	<!--  -->
+	<!-- 회원정보 가져오기 -->
 	<select id="getMemberInfoDao" resultType="com.jdy.profile.dto.MemberDto">
 		select * from pmembers where mid=#{param1}
 	</select>
 	
+	<!-- 회원정보 수정하기 -->
+	<update id="modifyInfoDao">
+		update pmembers set mpw=#{param2}, mname=#{param3}, memail=#{param4} where mid=#{param1}
+	</update>
 
 </mapper>
