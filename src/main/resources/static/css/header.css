@@ -1,7 +1,7 @@
 @charset "UTF-8";
 
 tr.header_line {
-	background-color: #081c15;
+	background-color: #3D550C;
 	height: 70px;	
 }
 
@@ -28,7 +28,4 @@ a.menulink:hover {
 	color: #ffffff;
 	font-weight: bold;
 }
-
-
-
 

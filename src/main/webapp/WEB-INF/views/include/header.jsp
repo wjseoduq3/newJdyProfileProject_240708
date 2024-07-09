@@ -21,7 +21,7 @@
 				<c:choose>
 					<c:when test="${sessionScope.sessionId eq null}">
 						<td width="5%">
-							<a href="login"><span class="menu">login</span></a>
+							<a class="menulink" href="login"><span class="menu">login</span></a>
 						</td>
 						<td width="5%">
 							<a class="menulink" href="join"><span class="menu">join</span></a>

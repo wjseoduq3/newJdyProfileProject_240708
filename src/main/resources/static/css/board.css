@@ -15,13 +15,13 @@ td.board_content {
 	border-left: 1px solid #3D550C;
 	border-right: 1px solid #3D550C;
 	border-bottom: 1px solid #3D550C;
-	color: #008000;
+	color: #253407;
 }
 
 a.contentink:link {
 	font-family: NanumGothic, Arial;
 	font-size: 17px;
-	color: #3D550C;
+	color: #253407;
 	text-decoration: none;
 }
 
@@ -35,6 +35,6 @@ a.contentink:visited {
 a.contentlink:hover {
 	font-family: NanumGothic, Arial;
 	font-size: 17px;
-	color: #3D550C;
+	color: #253407;
 	font-weight: bold;
 }

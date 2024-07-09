@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 <link rel="stylesheet" href="/resources/css/title.css">
 <link rel="stylesheet" href="/resources/css/content.css">
-<script type="text/javascript" href="/resources/js/write.js"></script>
+<script type="text/javascript" src="/resources/js/write.js"></script>
 <title>JDY Profile</title>
 </head>
 <body>
@@ -66,7 +66,7 @@
 							<span class="content_text">내용 :</span>
 						</td>
 						<td>
-							<textarea  class="text_area" rows="10" cols="50" name="bcontent" readonly="readonly">${bDto.bcontent}</textarea>
+							<textarea  class="text_area" rows="10" cols="50" name="bcontent">${bDto.bcontent}</textarea>
 						</td>
 					</tr>				
 					<tr>
@@ -75,7 +75,7 @@
 					<tr>
 						<td colspan="2" align="center">							
 							<input class="btn01" type="submit" value="수정완료">							>
-							<input class="btn01" type="button" value="취소" onclick="javascript:history.go(-1)">
+							<input class="btn01" type="button" value="수정취소" onclick="javascript:history.go(-1)">
 							<input class="btn01" type="button" value="글목록" onclick="javascript:window.location.href='list'">
 						</td>
 					</tr>

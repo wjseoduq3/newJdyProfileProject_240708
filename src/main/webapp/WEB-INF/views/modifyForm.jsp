@@ -26,7 +26,7 @@
 		</tr>
 		<tr>
 			<td class="content_box" align="center">
-				<form action="modifyOk" method="post" name="joinForm">				
+				<form action="modifyOk" method="post" name="modifyForm">				
 				<table border="0" cellpadding="10" cellspacing="0">
 					<tr>
 						<td align="right">

@@ -38,7 +38,7 @@
 						<td align="center">
 							<span class="content_text">
 							${mname}님 로그인을 축하드립니다.<br>
-							${mname}님의가입일은 ${mdate}입니다.<br>
+							${mname}님의 가입일은 ${mdate}입니다.<br>
 							게시판에 글을 쓰실 수 있습니다.<br><br>							
 							<input class="btn01" type="button" value="글쓰기" onclick="javascript:window.location.href='write'">
 							</span>

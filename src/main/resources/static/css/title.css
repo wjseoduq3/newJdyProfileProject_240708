@@ -8,7 +8,7 @@ body {
 
 span.title_text01 {
 	font-size: 80px;
-	color: #81B622;
+	color: #3D550C;
 	font-family: Arial;
 	font-weight: bold;	
 }
@@ -21,14 +21,14 @@ span.title_text02 {
 
 span.skill_text01 {
 	font-size: 70px;
-	color: #81B622;
+	color: #ecf87f;
 	font-family: Arial;
 	font-weight: bold;	
 }
 
 span.skill_text02 {
 	font-size: 40px;
-	color: #3D550C;
+	color: #59981A;
 	font-family: Arial;
 	font-weight: bold;
 }

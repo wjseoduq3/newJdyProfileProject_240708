@@ -25,8 +25,7 @@
 			</td>
 		</tr>
 		<tr>
-			<td class="content_box" align="center">
-								
+			<td class="content_box" align="center">							
 				<table border="0" cellpadding="10" cellspacing="0">
 					<tr>
 						<td align="right">
@@ -61,9 +60,6 @@
 						</td>
 					</tr>
 					<tr>
-						<td colspan="2">&nbsp;</td>
-					</tr>
-					<tr>
 						<td align="right">
 							<span class="content_text">가입일 :</span>
 						</td>
@@ -81,7 +77,6 @@
 						</td>
 					</tr>
 				</table>
-				</form>
 			</td>
 		</tr>
 	</table>

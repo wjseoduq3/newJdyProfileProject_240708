@@ -42,8 +42,8 @@
 						<td class="board_content" align="center">${bDto.bnum}</td>
 						<td class="board_content" align="center">${bDto.bid}</td>
 						<td class="board_content" align="center">${bDto.bname}</td>
-						<td class="board_content" align="left">
-						<a class="contentlink" href="contentView?bnum=${bDto.bnum}">
+						<td class="board_content">
+							<a class="contentlink" href="contentView?bnum=${bDto.bnum}">
 							<c:choose>
 								<c:when test="${fn:length(bDto.btitle) > 40}">
 									<c:out value="${fn:substring(bDto.btitle, 0, 39)}"></c:out>...
