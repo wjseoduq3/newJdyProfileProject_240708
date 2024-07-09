@@ -241,7 +241,7 @@ public class ProfileController {
 		
 		BoardDto bDto = boardDao.contentViewDao(request.getParameter("bnum"));
 		
-		if(sid.equals(bDto.getBid()) || (sid.equals("admin"))) {
+		if(sid.equals(bDto.getBid()) || (sid.equals("admin")))  {
 			
 			boardDao.contentDeleteDao(request.getParameter("bnum"));
 						
