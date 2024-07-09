@@ -208,6 +208,7 @@ public class ProfileController {
 		MemberDto mDto = memberDao.getMemberInfoDao(bDto.getBid());
 		
 		model.addAttribute("bDto", bDto);
+		model.addAttribute("mDto", mDto);
 		
 		return "contentView";
 	}
@@ -215,9 +216,29 @@ public class ProfileController {
 	@GetMapping(value = "/contentModify")
 	public String contentModify(HttpServletRequest request, Model model) {
 		
+		BoardDao boardDao = sqlSession.getMapper(BoardDao.class);
+		MemberDao memberDao = sqlSession.getMapper(MemberDao.class);
 		
+		BoardDto bDto = boardDao.contentViewDao(request.getParameter("bnum"));
+		MemberDto mDto = memberDao.getMemberInfoDao(bDto.getBid());
+		
+		model.addAttribute("bDto", bDto);
+		model.addAttribute("mDto", mDto);
+			
 		return "contentModify";
 	}
+	
+	@GetMapping(value = "/contentModifyOk")
+	
+	public String contentModifyOk(HttpServletRequest request) {
+		
+		BoardDao boardDao = sqlSession.getMapper(BoardDao.class);
+		boardDao.contentModifyDao(request.getParameter("bnum"), request.getParameter("btitle"), request.getParameter("bcontent"));
+		
+		
+		return "redirect:list";
+	}
+	
 	
 	
 }

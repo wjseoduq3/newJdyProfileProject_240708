@@ -17,6 +17,11 @@
 		select * from pboard where bnum=#{param1}
 	</select>
 
+	<update id="contentModifyDao">
+		update pboard set btitle=#{param2}, bcontent=#{param3} where bnum=#{param1}
+	</update>
+	
+	
 
 
 
