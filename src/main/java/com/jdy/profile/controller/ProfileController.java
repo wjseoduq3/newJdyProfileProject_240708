@@ -213,7 +213,7 @@ public class ProfileController {
 				response.setContentType("text/html;charset=utf-8");//경고창 텍스트를 utf-8로 인코딩
 				response.setCharacterEncoding("utf-8");
 				PrintWriter printWriter = response.getWriter();
-				printWriter.println("<script>alert('"+"내용 작성해야함"+"');history.go(-1);</script>");
+				printWriter.println("<script>alert('"+"글 수정은 해당 글을 쓴 회원만 가능합니다!"+"');history.go(-1);</script>");
 				printWriter.flush();
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
@@ -241,15 +241,17 @@ public class ProfileController {
 		
 		BoardDto bDto = boardDao.contentViewDao(request.getParameter("bnum"));
 		
-		if(sid.equals(bDto.getBid()) || (sid.equals("admin"))) {		
-			boardDao.contentDeleteDao(request.getParameter("bnum"));			
+		if(sid.equals(bDto.getBid()) || (sid.equals("admin"))) {
+			
+			boardDao.contentDeleteDao(request.getParameter("bnum"));
+						
 		} else {
 			// 컨트롤러에서 경고창 띄우기
 			try {
 				response.setContentType("text/html;charset=utf-8");//경고창 텍스트를 utf-8로 인코딩
 				response.setCharacterEncoding("utf-8");
 				PrintWriter printWriter = response.getWriter();
-				printWriter.println("<script>alert('"+"내용 작성해야함"+"');history.go(-1);</script>");
+				printWriter.println("<script>alert('"+"글 삭제는 해당글을 작성한 회원 또는 관리자만 가능합니다."+"');history.go(-1);</script>");
 				printWriter.flush();
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
