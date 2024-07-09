@@ -253,11 +253,17 @@ public class ProfileController {
 		
 		BoardDao boardDao = sqlSession.getMapper(BoardDao.class);
 		boardDao.contentModifyDao(request.getParameter("bnum"), request.getParameter("btitle"), request.getParameter("bcontent"));
-		
-		
+			
 		return "redirect:list";
 	}
 	
+	@GetMapping(value = "/contentDelete")
+	public String contentDelete(HttpServletRequest request, ) {
+		
+		
+		
+		return "contentDelete";
+	}
 	
 	
 }

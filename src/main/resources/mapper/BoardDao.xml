@@ -21,6 +21,9 @@
 		update pboard set btitle=#{param2}, bcontent=#{param3} where bnum=#{param1}
 	</update>
 	
+	<delete id="">
+		delete from pboard * where bnum=#{param1}
+	</delete>
 	
 
 
