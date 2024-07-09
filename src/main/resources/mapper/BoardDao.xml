@@ -10,7 +10,11 @@
 	</insert>
 	
 	<select id="listDao" resultType="com.jdy.profile.dto.BoardDto">
-		select * from pboard oreder by bnum desc
+		select * from pboard order by bnum desc
+	</select>
+	
+	<select id="contentViewDao" resultType="com.jdy.profile.dto.BoardDto">
+		select * from pboard where bnum=#{param1}
 	</select>
 
 

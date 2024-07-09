@@ -26,14 +26,14 @@
 		</tr>
 		<tr>
 			<td class="content_box" align="center">
-				<form action="writeOk" name="writeForm">				
+							
 				<table border="0" cellpadding="10" cellspacing="0">
 					<tr>
 						<td align="right">
 							<span class="content_text">아이디 :</span>
 						</td>
 						<td>
-							<input class="input_box01" type="text" name="bid" value="${mDto.mid}" readonly="readonly">
+							<input class="input_box01_view" type="text" name="bid" value="${bDto.bid}" readonly="readonly">
 						</td>
 					</tr>
 					<tr>
@@ -41,7 +41,7 @@
 							<span class="content_text">이름 :</span>
 						</td>
 						<td>
-							<input class="input_box01" type="text" name="bname" value="${mDto.mname}" readonly="readonly">
+							<input class="input_box01_view" type="text" name="bname" value="${bDto.bname}" readonly="readonly">
 						</td>
 					</tr>
 					<tr>
@@ -49,7 +49,7 @@
 							<span class="content_text">이메일 :</span>
 						</td>
 						<td>
-							<input class="input_box01" type="text" name="bemail" value="${mDto.memail}" readonly="readonly">
+							<input class="input_box01_view" type="text" name="bemail" value="${mDto.memail}" readonly="readonly">
 						</td>
 					</tr>
 					<tr>
@@ -57,7 +57,7 @@
 							<span class="content_text">제목 :</span>
 						</td>
 						<td>
-							<input class="input_box02" type="text" name="btitle">
+							<input class="input_box02_view" type="text" name="btitle" value="${bDto.btitle}" readonly="readonly">
 						</td>
 					</tr>
 					<tr>
@@ -65,7 +65,7 @@
 							<span class="content_text">내용 :</span>
 						</td>
 						<td>
-							<textarea  class="text_area" rows="10" cols="50" name="bcontent"></textarea>
+							<textarea  class="text_area" rows="10" cols="50" name="bcontent" readonly="readonly">${bDto.bcontent}</textarea>
 						</td>
 					</tr>				
 					<tr>
@@ -73,12 +73,13 @@
 					</tr>
 					<tr>
 						<td colspan="2" align="center">							
-							<input class="btn01" type="button" value="작성완료" onclick="writeCheck()">
-							<input class="btn01" type="button" value="취소" onclick="javascript:window.location.href='list'">
+							<input class="btn01" type="button" value="수정" onclick="javascript:window.location.href='contentModify?bnum=${bDto.bnum}'">
+							<input class="btn01" type="button" value="삭제" onclick="javascript:window.location.href='delete?'">
+							<input class="btn01" type="button" value="글목록" onclick="javascript:window.location.href='list'">
 						</td>
 					</tr>
 				</table>
-				</form>
+				
 			</td>
 		</tr>
 	</table>
