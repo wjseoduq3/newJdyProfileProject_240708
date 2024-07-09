@@ -214,18 +214,37 @@ public class ProfileController {
 	}
 	
 	@GetMapping(value = "/contentModify")
-	public String contentModify(HttpServletRequest request, Model model) {
+	public String contentModify(HttpServletRequest request, Model model, HttpSession session, HttpServletResponse response) {
 		
 		BoardDao boardDao = sqlSession.getMapper(BoardDao.class);
 		MemberDao memberDao = sqlSession.getMapper(MemberDao.class);
 		
 		BoardDto bDto = boardDao.contentViewDao(request.getParameter("bnum"));
-		MemberDto mDto = memberDao.getMemberInfoDao(bDto.getBid());
 		
-		model.addAttribute("bDto", bDto);
-		model.addAttribute("mDto", mDto);
+		String sid = (String) session.getAttribute("sessionId");
+		
+		
+		if(sid.equals(bDto.getBid()) || (sid.equals("admin"))) {
 			
-		return "contentModify";
+			MemberDto mDto = memberDao.getMemberInfoDao(bDto.getBid());
+			
+			model.addAttribute("bDto", bDto);
+			model.addAttribute("mDto", mDto);			
+		} else {
+			// 컨트롤러에서 경고창 띄우기
+			try {
+				response.setContentType("text/html;charset=utf-8");//경고창 텍스트를 utf-8로 인코딩
+				response.setCharacterEncoding("utf-8");
+				PrintWriter printWriter = response.getWriter();
+				printWriter.println("<script>alert('"+"내용 작성해야함"+"');history.go(-1);</script>");
+				printWriter.flush();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}			
+			return "contentModify";
+		}
+		
 	}
 	
 	@GetMapping(value = "/contentModifyOk")
