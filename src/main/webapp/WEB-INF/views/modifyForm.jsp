@@ -74,7 +74,7 @@
 					<tr>
 						<td colspan="2" align="center">							
 							<input class="btn01" type="button" value="수정완료" onclick="joinCheck()">
-							<input class="btn01" type="button" value="취소" onclick="javascript:window.location.href='history.go(-1)'">
+							<input class="btn01" type="button" value="취소" onclick="javascript:history.go(-1)">
 						</td>
 					</tr>
 				</table>

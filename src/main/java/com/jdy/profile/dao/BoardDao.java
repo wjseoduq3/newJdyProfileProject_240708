@@ -10,7 +10,7 @@ public interface BoardDao {
 	public ArrayList<BoardDto> listDao();
 	public BoardDto contentViewDao(String bnum);
 	public void contentModifyDao(String bnum, String btitle, String bcontent);
-	public BoardDto contentDeleteDao(String bnum);
+	public void contentDeleteDao(String bnum);
 		
 	
 	

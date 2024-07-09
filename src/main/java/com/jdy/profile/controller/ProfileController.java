@@ -248,7 +248,6 @@ public class ProfileController {
 	}
 	
 	@GetMapping(value = "/contentModifyOk")
-	
 	public String contentModifyOk(HttpServletRequest request) {
 		
 		BoardDao boardDao = sqlSession.getMapper(BoardDao.class);
@@ -257,12 +256,36 @@ public class ProfileController {
 		return "redirect:list";
 	}
 	
+	
 	@GetMapping(value = "/contentDelete")
-	public String contentDelete(HttpServletRequest request, ) {
+	public String contentDelete(HttpServletRequest request, Model model, HttpSession session, HttpServletResponse response) {
+		
+		BoardDao boardDao = sqlSession.getMapper(BoardDao.class);
+		MemberDao memberDao = sqlSession.getMapper(MemberDao.class);
+		
+		BoardDto bDto = boardDao.contentViewDao(request.getParameter("bnum"));
+		
+		String sid = (String) session.getAttribute("sessionId");
 		
 		
-		
-		return "contentDelete";
+		if(sid.equals(bDto.getBid()) || (sid.equals("admin"))) {
+			
+			boardDao.contentDeleteDao(request.getParameter("bnum"));
+			
+		} else {
+			// 컨트롤러에서 경고창 띄우기
+			try {
+				response.setContentType("text/html;charset=utf-8");//경고창 텍스트를 utf-8로 인코딩
+				response.setCharacterEncoding("utf-8");
+				PrintWriter printWriter = response.getWriter();
+				printWriter.println("<script>alert('"+"내용 작성해야함"+"');history.go(-1);</script>");
+				printWriter.flush();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}			
+			return "redirect:list";
+		}
 	}
 	
 	

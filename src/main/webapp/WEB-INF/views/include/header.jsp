@@ -15,7 +15,7 @@
 					&nbsp;
 				</td>
 				<td width="5%">
-					<a href="index"><span class="menu">home</span></a>
+					<a class="menulink" href="index"><span class="menu">home</span></a>
 				</td>
 				
 				<c:choose>
@@ -24,27 +24,27 @@
 							<a href="login"><span class="menu">login</span></a>
 						</td>
 						<td width="5%">
-							<a href="join"><span class="menu">join</span></a>
+							<a class="menulink" href="join"><span class="menu">join</span></a>
 						</td>
 					</c:when>
 					<c:otherwise>				
 						<td width="5%">
-							<a href="logout"><span class="menu">logout</span></a>
+							<a class="menulink" href="logout"><span class="menu">logout</span></a>
 						</td>
 						<td width="5%">
-							<a href="modify"><span class="menu">modify</span></a>
+							<a class="menulink" href="modify"><span class="menu">modify</span></a>
 						</td>
 					</c:otherwise>
 				</c:choose>
 				
 				<td width="5%">
-					<a href="profile"><span class="menu">profile</span></a>
+					<a class="menulink" href="profile"><span class="menu">profile</span></a>
 				</td>
 				<td width="5%">
-					<a href="list"><span class="menu">board</span></a>
+					<a class="menulink" href="list"><span class="menu">board</span></a>
 				</td>
 				<td width="5%">
-					<a href="contact"><span class="menu">contact</span></a>
+					<a class="menulink" href="contact"><span class="menu">contact</span></a>
 				</td>
 				<td width="5%">
 					&nbsp;

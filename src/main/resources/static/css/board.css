@@ -15,5 +15,26 @@ td.board_content {
 	border-left: 1px solid #3D550C;
 	border-right: 1px solid #3D550C;
 	border-bottom: 1px solid #3D550C;
+	color: #008000;
+}
+
+a.contentink:link {
+	font-family: NanumGothic, Arial;
+	font-size: 17px;
 	color: #3D550C;
+	text-decoration: none;
+}
+
+a.contentink:visited {
+	font-family: NanumGothic, Arial;
+	font-size: 17px;
+	color: #808080;
+	text-decoration: none;
+}
+
+a.contentlink:hover {
+	font-family: NanumGothic, Arial;
+	font-size: 17px;
+	color: #3D550C;
+	font-weight: bold;
 }

@@ -18,12 +18,12 @@ span.loginid {
 	font-weight: bold;
 }
 
-a:link {
+a.menulink:link {
 	text-decoration: none;
 	color: inherit;
 }
 
-a:hover {
+a.menulink:hover {
 	text-decoration: underline;
 	color: #ffffff;
 	font-weight: bold;
