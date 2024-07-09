@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -34,27 +37,18 @@
 						<th class="board_title" width="60%">제목</th>
 						<th class="board_title" width="14%">등록일</th>					
 					</tr>
+					<c:forEach items="${bDtos}" var="bDto">
 					<tr>
-						<td class="board_content" align="center">1</td>
-						<td class="board_content" align="center">gary</td>
-						<td class="board_content" align="center">홍길동</td>
-						<td class="board_content" align="left">가입인사</td>
-						<td class="board_content" align="center">2024-07-08</td>
+						<td class="board_content" align="center">${bDto.bnum}</td>
+						<td class="board_content" align="center">${bDto.bid}</td>
+						<td class="board_content" align="center">${bDto.bname}</td>
+						<td class="board_content" align="left">${bDto.btitle}</td>
+						<td class="board_content" align="center">
+							<c:out value="${fn:substring(bDto.bdate, 0, 10)}"></c:out>				
+						</td>
 					</tr>
-					<tr>
-						<td class="board_content">2</td>
-						<td class="board_content">gary</td>
-						<td class="board_content">홍길동</td>
-						<td class="board_content">가입인사</td>
-						<td class="board_content">2024-07-08</td>
-					</tr>
-					<tr>
-						<td class="board_content">3</td>
-						<td class="board_content">gary</td>
-						<td class="board_content">홍길동</td>
-						<td class="board_content">가입인사</td>
-						<td class="board_content">2024-07-08</td>
-					</tr>
+					</c:forEach>
+					
 					<tr>
 						<td colspan="5" align="right">
 							<input class="btn01" type="button" value="글쓰기" onclick="javascript:window.location.href='write'">

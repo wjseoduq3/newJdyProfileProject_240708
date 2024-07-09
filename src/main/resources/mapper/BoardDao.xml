@@ -5,7 +5,13 @@
 
 <mapper namespace="com.jdy.profile.dao.BoardDao">
 
-
+	<insert id="writeDao">
+		insert into pboard(bnum, bid, bname, btitle, bcontent) values(pboard_seq.nextval, #{param1},#{param2},#{param3},#{param4})
+	</insert>
+	
+	<select id="listDao" resultType="com.jdy.profile.dto.BoardDto">
+		select * from pboard oreder by bnum desc
+	</select>
 
 
 

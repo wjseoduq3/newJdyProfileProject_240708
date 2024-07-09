@@ -2,6 +2,7 @@ package com.jdy.profile.controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,7 +11,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import com.jdy.profile.dao.BoardDao;
 import com.jdy.profile.dao.MemberDao;
+import com.jdy.profile.dto.BoardDto;
 import com.jdy.profile.dto.MemberDto;
 
 import jakarta.servlet.http.HttpServletRequest;
@@ -87,16 +90,21 @@ public class ProfileController {
 	@GetMapping(value = "/writeOk")
 	public String writeOk(HttpServletRequest request, Model model) {
 		
+		BoardDao boardDao = sqlSession.getMapper(BoardDao.class);
+		
+		boardDao.writeDao(request.getParameter("bid"), request.getParameter("bname"), request.getParameter("btitle"), request.getParameter("bcontent"));
 		
 		
 		return "redirect:list";
 	}
 	
 	@GetMapping(value = "/list")
-	public String list() {
+	public String list(Model model) {
 		
+		BoardDao boardDao = sqlSession.getMapper(BoardDao.class);
 		
-		
+		ArrayList<BoardDto> bDtos = boardDao.listDao();
+		model.addAttribute("bDtos",bDtos);
 		
 		return "boardlist";
 	}
