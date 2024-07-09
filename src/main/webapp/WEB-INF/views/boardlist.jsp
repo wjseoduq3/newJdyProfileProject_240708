@@ -44,8 +44,8 @@
 						<td class="board_content" align="center">${bDto.bname}</td>
 						<td class="board_content" align="left">
 							<c:choose>
-								<c:when test="${fn:length(bDto.btitle) > 47}">
-									<c:out value="${${fn:substring(bDto.btitle, 0, 44)}}"></c:out>...
+								<c:when test="${fn:length(bDto.btitle) > 45}">
+									<c:out value="${fn:substring(bDto.btitle, 0, 44)}"></c:out>...
 								</c:when>
 								<c:otherwise>
 									${bDto.btitle}
