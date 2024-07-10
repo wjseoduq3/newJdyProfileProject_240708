@@ -235,7 +235,7 @@ public class ProfileController {
 	public String contentDelete(HttpServletRequest request, Model model, HttpSession session, HttpServletResponse response) {
 		
 		BoardDao boardDao = sqlSession.getMapper(BoardDao.class);
-		// MemberDao memberDao = sqlSession.getMapper(MemberDao.class);
+		MemberDao memberDao = sqlSession.getMapper(MemberDao.class);
 		
 		String sid = (String) session.getAttribute("sessionId");
 		

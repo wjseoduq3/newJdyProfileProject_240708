@@ -81,7 +81,7 @@
 					<tr>
 						<td colspan="2" align="center">							
 							<input class="btn01" type="button" value="수정" onclick="javascript:window.location.href='contentModify?bnum=${bDto.bnum}'">
-							<input class="btn01" type="button" value="삭제" onclick="javascript:window.location.href='contentDelete?${bDto.bnum}'">
+							<input class="btn01" type="button" value="삭제" onclick="javascript:window.location.href='contentDelete?bnum=${bDto.bnum}'">
 							<input class="btn01" type="button" value="글목록" onclick="javascript:window.location.href='list'">
 						</td>
 					</tr>
