@@ -13,7 +13,9 @@ public interface BoardDao {
 	public void contentModifyDao(String bnum, String btitle, String bcontent); // 게시판 글 수정하기
 	public void contentDeleteDao(String bnum); // 게시판 글 삭제하기
 	public int boardTotalCountDao();
-	
+	public ArrayList<BoardDto> searchKeyDao(int amount, int pageNum, String searchKey);
+	public int searchResultTotalDao(String searchKey); 
+		
 	
 	
 }

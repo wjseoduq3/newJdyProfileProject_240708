@@ -19,6 +19,15 @@
 						where pagenum = #{param2}
 	</select>
 	
+	<!-- 게시판 검색결과 리스트 -->
+	<select id="searchKeyDao" resultType="com.jdy.profile.dto.BoardDto">
+		select * from 					
+			(select A.*, ceil((ROWNUM/#{param1}))pagenum, ROWNUM 
+				from 
+					(select * from pboard where btitle like '%' || #{param3} || '%' or bcontent like '%' || #{param3} || '%' order by bnum desc)A)
+						where pagenum = #{param2}
+	</select>
+	
 	<!-- 게시판 글내용 보기 -->
 	<select id="contentViewDao" resultType="com.jdy.profile.dto.BoardDto">
 		select * from pboard where bnum=#{param1}
@@ -37,6 +46,11 @@
 	<!-- 게시판 총 글수 -->
 	<select id="boardTotalCountDao" resultType="int">
 		select count(*) from pboard
+	</select>
+	
+	<!-- 게시판 검색결과 총 글수 -->
+	<select id="searchResultTotalDao" resultType="int">
+		select count(*) from pboard where btitle like '%' || #{param1} || '%' or bcontent like '%' || #{param1} || '%' order by bnum desc
 	</select>
 	
 </mapper>

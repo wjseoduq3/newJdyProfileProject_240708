@@ -84,3 +84,12 @@ textarea.text_area_view {
 	background-color: #c2d70d;
 }
 
+input.search_btn {
+	border: 1px solid #3D550C;
+	width: 110px;
+	height: 37px;
+	font-family: NanumGothic;
+	font-size: 17px;
+	padding: 5px;
+	background-color: #cee30d;
+}

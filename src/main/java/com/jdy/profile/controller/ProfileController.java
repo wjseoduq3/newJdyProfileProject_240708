@@ -121,6 +121,37 @@ public class ProfileController {
 		return "boardlist";
 	}
 	
+	@GetMapping(value = "/list2")
+	public String list2(Model model, Criteria criteria, HttpServletRequest request) {
+		
+		BoardDao boardDao = sqlSession.getMapper(BoardDao.class);	
+		
+		String pageNum = request.getParameter("pageNum");
+		 String searchKey = request.getParameter("searchKey");
+		
+		if(pageNum != null) {
+			criteria.setPageNum(Integer.parseInt(pageNum));
+		} 
+		
+		int total = boardDao.searchResultTotalDao(searchKey);
+		
+		PageDto pageDto = new PageDto(total, criteria);
+		
+		int realEndPage = (int) Math.ceil(total*1.0 / criteria.getAmount());
+		
+		//ArrayList<BoardDto> bDtos = boardDao.listDao(criteria.getAmount(), criteria.getPageNum());
+		ArrayList<BoardDto> bDtos = boardDao.searchKeyDao(criteria.getAmount(), criteria.getPageNum(), searchKey);
+		
+		model.addAttribute("bDtos",bDtos);	
+		model.addAttribute("pageDto", pageDto);
+		model.addAttribute("currPage", criteria.getPageNum());
+		model.addAttribute("realEndPage", realEndPage);
+		model.addAttribute("searchKey", searchKey);
+		
+		return "boardlist2";
+	}
+	
+	
 	@PostMapping(value = "/joinOk")
 	public String joinOk(HttpServletRequest request, Model model) {
 		MemberDao memberDao = sqlSession.getMapper(MemberDao.class);				
