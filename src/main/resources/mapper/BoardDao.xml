@@ -12,7 +12,11 @@
 	
 	<!-- 게시판 리스트 -->
 	<select id="listDao" resultType="com.jdy.profile.dto.BoardDto">
-		select * from pboard order by bnum desc
+		select * from 					
+			(select A.*, ceil((ROWNUM/#{param1}))pagenum, ROWNUM 
+				from 
+					(select * from pboard order by bnum desc)A)
+						where pagenum = #{param2}
 	</select>
 	
 	<!-- 게시판 글내용 보기 -->
@@ -34,7 +38,5 @@
 	<select id="boardTotalCountDao" resultType="int">
 		select count(*) from pboard
 	</select>
-	
-	
 	
 </mapper>

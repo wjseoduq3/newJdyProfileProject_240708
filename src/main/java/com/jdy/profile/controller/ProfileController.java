@@ -111,7 +111,7 @@ public class ProfileController {
 		
 		
 		
-		ArrayList<BoardDto> bDtos = boardDao.listDao();
+		ArrayList<BoardDto> bDtos = boardDao.listDao(criteria.getAmount(), criteria.getPageNum());
 		
 		model.addAttribute("bDtos",bDtos);	
 		model.addAttribute("pageDto", pageDto);
