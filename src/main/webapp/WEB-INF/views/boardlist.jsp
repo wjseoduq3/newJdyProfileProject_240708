@@ -45,8 +45,8 @@
 						<td class="board_content">
 							<a class="contentlink" href="contentView?bnum=${bDto.bnum}">
 							<c:choose>
-								<c:when test="${fn:length(bDto.btitle) > 40}">
-									<c:out value="${fn:substring(bDto.btitle, 0, 36)}"></c:out>...
+								<c:when test="${fn:length(bDto.btitle) > 33}">
+									<c:out value="${fn:substring(bDto.btitle, 0, 32)}"></c:out>...
 								</c:when>
 								<c:otherwise>
 									${bDto.btitle}
