@@ -11,5 +11,8 @@ public interface BoardDao {
 	public BoardDto contentViewDao(String bnum); // 게시판 글 내용 보기
 	public void contentModifyDao(String bnum, String btitle, String bcontent); // 게시판 글 수정하기
 	public void contentDeleteDao(String bnum); // 게시판 글 삭제하기
+	public int boardTotalCountDao();
+	
+	
 	
 }

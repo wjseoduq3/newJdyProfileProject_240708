@@ -15,7 +15,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import com.jdy.profile.dao.BoardDao;
 import com.jdy.profile.dao.MemberDao;
 import com.jdy.profile.dto.BoardDto;
+import com.jdy.profile.dto.Criteria;
 import com.jdy.profile.dto.MemberDto;
+import com.jdy.profile.dto.PageDto;
 
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -93,11 +95,27 @@ public class ProfileController {
 	}
 	
 	@GetMapping(value = "/list")
-	public String list(Model model) {
+	public String list(Model model, Criteria criteria, HttpServletRequest request) {
 		
 		BoardDao boardDao = sqlSession.getMapper(BoardDao.class);	
+		
+		String pageNum = request.getParameter("pageNum");
+		
+		if(pageNum != null) {
+			criteria.setPageNum(Integer.parseInt(pageNum));
+		}
+		
+		int total = boardDao.boardTotalCountDao();
+		
+		PageDto pageDto = new PageDto(total, criteria);
+		
+		
+		
 		ArrayList<BoardDto> bDtos = boardDao.listDao();
-		model.addAttribute("bDtos",bDtos);		
+		
+		model.addAttribute("bDtos",bDtos);	
+		model.addAttribute("pageDto", pageDto);
+		
 		return "boardlist";
 	}
 	
