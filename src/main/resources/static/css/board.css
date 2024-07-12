@@ -18,14 +18,14 @@ td.board_content {
 	color: #253407;
 }
 
-a.contentink:link {
+a.contentlink:link {
 	font-family: NanumGothic, Arial;
 	font-size: 17px;
 	color: #253407;
 	text-decoration: none;
 }
 
-a.contentink:visited {
+a.contentlink:visited {
 	font-family: NanumGothic, Arial;
 	font-size: 17px;
 	color: #808080;
@@ -37,4 +37,34 @@ a.contentlink:hover {
 	font-size: 17px;
 	color: #253407;
 	font-weight: bold;
+}
+
+a.pagelink:link {
+	font-family: NanumGothic, Arial;
+	font-size: 17px;
+	color: #253407;
+	text-decoration: none;
+}
+
+a.pagelink:visited {
+	font-family: NanumGothic, Arial;
+	font-size: 17px;
+	color: #808080;
+	text-decoration: none;
+}
+
+a.pagelink:hover {
+	font-family: NanumGothic, Arial;
+	font-size: 17px;
+	color: #253407;
+	font-weight: bold;
+}
+
+span.currpage {
+	font-family: NanumGothic, Arial;
+	color: #000000;
+	font-weight: bold;
+	background-color: background-color #3D550C;
+	border: 1px solid #3D550C;
+	font-size: 17px;
 }
