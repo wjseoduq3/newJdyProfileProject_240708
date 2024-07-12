@@ -54,7 +54,7 @@
 				<td height="30" align="right" colspan="7">
 					<c:if test="${sessionScope.sessionId != null}">
 						<span class="loginid">
-							login : <c:out value="${sessionScope.sessionId}"></c:out>
+							login : <c:out value="${sessionScope.sessionId} [${sessionScope.sessionName} ]"></c:out>
 						</span>
 					</c:if>
 				</td>

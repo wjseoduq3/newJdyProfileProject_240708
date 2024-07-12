@@ -130,6 +130,7 @@ public class ProfileController {
 		} else { //로그인 성공->세션에 현재 로그인 성공된 아이디를 저장
 			session.setAttribute("sessionId", request.getParameter("mid"));	
 			memberDto = memberDao.getMemberInfoDao(request.getParameter("mid"));
+			session.setAttribute("sessionName", memberDto.getMname());
 						
 			model.addAttribute("mname", memberDto.getMname()); //로그인한 회원 이름
 			model.addAttribute("mdate", memberDto.getMdate()); //로그인한 회원 가입일			
@@ -202,9 +203,10 @@ public class ProfileController {
 		
 		BoardDto bDto = boardDao.contentViewDao(request.getParameter("bnum"));
 		
-		if(sid.equals(bDto.getBid()) || (sid.equals("admin"))) {
+		if((sid != null) && (sid.equals(bDto.getBid()) || (sid.equals("admin")))) {
 			//참이면 글을 쓴 회원과 현재 로그인 중인 아이디가 일치 -> 수정, 삭제 가능
-			MemberDto mDto = memberDao.getMemberInfoDao(bDto.getBid());			
+			MemberDto mDto = memberDao.getMemberInfoDao(bDto.getBid());	
+			
 			model.addAttribute("bDto", bDto);
 			model.addAttribute("mDto", mDto);			
 		} else { //글을 쓴 회원과 현재 로그인한 아이디가 다르므로 수정 삭제 권한 없음
@@ -241,7 +243,7 @@ public class ProfileController {
 		
 		BoardDto bDto = boardDao.contentViewDao(request.getParameter("bnum"));
 		
-		if(sid.equals(bDto.getBid()) || (sid.equals("admin")))  {
+		if((sid != null) && (sid.equals(bDto.getBid()) || (sid.equals("admin"))))  {
 			
 			boardDao.contentDeleteDao(request.getParameter("bnum"));
 					
