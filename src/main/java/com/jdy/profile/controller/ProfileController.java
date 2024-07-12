@@ -116,6 +116,7 @@ public class ProfileController {
 		model.addAttribute("bDtos",bDtos);	
 		model.addAttribute("pageDto", pageDto);
 		model.addAttribute("currPage", criteria.getPageNum());
+		model.addAttribute("realEndPage", realEndPage);
 		
 		return "boardlist";
 	}

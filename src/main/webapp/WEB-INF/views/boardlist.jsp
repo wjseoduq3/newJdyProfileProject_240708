@@ -31,6 +31,11 @@
 			<td class="content_box" align="center">						
 				<table border="0" cellpadding="10" cellspacing="0" width="90%">
 					<tr>
+						<td colspan="5">
+							총 ${pageDto.total}건 &nbsp; ${currPage}/${realEndPage} page
+						</td>
+					</tr>
+					<tr>
 						<th class="board_title" width="6%">번호</th>
 						<th class="board_title" width="10%">아이디</th>
 						<th class="board_title" width="10%">이름</th>
@@ -86,7 +91,7 @@
 							&nbsp;&nbsp;
 							<c:if test="${pageDto.next}">
 								<a class="pagelink" href="list?pageNum=${pageDto.startPage+10}">▶</a>&nbsp;&nbsp;
-								<a class="pagelink" href="list?pageNum=realEndPage">▶▶</a>  
+								<a class="pagelink" href="list?pageNum=${realEndPage}">▶▶</a>  
 							</c:if>				
 						</td>					
 					</tr>					
