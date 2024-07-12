@@ -103,19 +103,19 @@ public class ProfileController {
 		
 		if(pageNum != null) {
 			criteria.setPageNum(Integer.parseInt(pageNum));
-		}
+		} 
 		
 		int total = boardDao.boardTotalCountDao();
 		
 		PageDto pageDto = new PageDto(total, criteria);
 		
+		int realEndPage = (int) Math.ceil(total*1.0 / criteria.getAmount());
 		
-			
 		ArrayList<BoardDto> bDtos = boardDao.listDao(criteria.getAmount(), criteria.getPageNum());
 		
 		model.addAttribute("bDtos",bDtos);	
 		model.addAttribute("pageDto", pageDto);
-		model.addAttribute("currPage", pageNum);
+		model.addAttribute("currPage", criteria.getPageNum());
 		
 		return "boardlist";
 	}

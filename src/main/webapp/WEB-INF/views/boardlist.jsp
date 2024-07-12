@@ -69,6 +69,7 @@
 					<tr>
 						<td colspan="5" align="center">
 							<c:if test="${pageDto.prev}">
+								<a class="pagelink" href="list?pageNum=1">◀◀</a>&nbsp;&nbsp;
 								<a class="pagelink" href="list?pageNum=${pageDto.startPage-10}">◀</a> 
 							</c:if>
 							&nbsp;&nbsp;
@@ -78,13 +79,14 @@
 										<span class="currpage">${pageNumber}</span>&nbsp;
 									</c:when>
 									<c:otherwise>
-										<a class="pagelink" href="list?pageNum=${pageNumber}">${pageNumber}</a>						
+										<a class="pagelink" href="list?pageNum=${pageNumber}">${pageNumber}</a>&nbsp;&nbsp;						
 									</c:otherwise>							
 								</c:choose>													
 							</c:forEach>
 							&nbsp;&nbsp;
 							<c:if test="${pageDto.next}">
-								<a class="pagelink" href="list?pageNum=${pageDto.startPage+10}">▶</a> 
+								<a class="pagelink" href="list?pageNum=${pageDto.startPage+10}">▶</a>&nbsp;&nbsp;
+								<a class="pagelink" href="list?pageNum=realEndPage">▶▶</a>  
 							</c:if>				
 						</td>					
 					</tr>					
